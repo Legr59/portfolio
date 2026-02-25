@@ -6,30 +6,32 @@
 
 legranmar@gmail.com
 
-59560 Comines 31000 Toulouse
+France
 
 ![img-1.jpeg](img-1.jpeg)
 
+legr59.github.io/portfolio
+
 # COMPÉTENCES TECHNIQUES
 
-- C/C++
-- Orcad PsPice
-- FPGA : VHDL
-- Python
-- Matlab
-- Permis B
+C/C++
+Orcad PsPice
+VHDL
+Python/Matlab
+HFSS
+Permis B
 
 # COMPÉTENCES
 
 - Travail sous pression
-- Efficacité
+Efficacité
 - Organisation
 
 # LANGUES
 
 - Français (langue maternelle)
-- Anglais (B1)
-- Japonais (Débutant)
+Anglais (B1)
+Japonais (Débutant)
 
 # MARTIN LEGRAND
 
@@ -37,37 +39,43 @@ legranmar@gmail.com
 
 # À PROPOS DE MOI
 
-Futur ingénieur diplômé de l'ENSEEIHT en filière 3EA, je spécialise mon parcours dans les systèmes embarqués et le traitement du signal. Passionné par la mobilité et l'innovation technologique, travailler dans le monde des transports a toujours été un objectif principal. Intégrer une entreprise comme Airbus, leader de l'aéronautique, représente pour moi l'opportunité idéale de mettre mes compétences acquises au service d'Airbus.
+Futur ingénieur diplômé de l'ENSEEIHT en filière 3EA, je spécialise mon parcours dans les systèmes embarqués et le traitement du signal. Passionné par l'innovation technologique, travailler dans une entreprise de ce secteur a toujours été un objectif principal. Je souhaite aujourd'hui réaliser mon stage de 3 mois au sein de vos équipes pour mettre mes compétences en électronique numérique, analogique et RF au service de vos projets techniques.
 
 # PARCOURS ACADÉMIQUE
 
 - ENSEEIHT 2024-31000-Toulouse
 - Diplôme d'ingénieur en Electronique et Génie électrique
 - Filière Electronique, Energie Electrique et Automatique (3EA)
+
 - Classe préparatoire Henri Wallon (CPGE) (59) 2022-2024
 - MPSI-MP
 - Travail sous pression
 - Organisation
+
 - Institution La Croix Blanche (59) 2015-2022
 - Baccalauréat avec spécialités Mathématiques et Physique-Chimie
 - Option : Mathématiques Expertes
 
 # EXPÉRIENCES
 
+- Conception d'un système de transmission audio optique Automne 2025
+- Dimensionnement et réalisation d'un modulateur FM à transistors
+- Mise en œuvre de la chaîne de réception : amplification et démodulation
+- Validation expérimentale
+
+- Système d'accès RFID (Microcontrôleur PIC18F) Automne 2025
+- Interface UART avec lecteur CR95HF et détection de tags NFC
+- Commande de servomoteur et programmation bas niveau en C
+
 - Employé Polyvalent Carter-Cash (59) Août 2025
 Réception de livraison et entretien de la relation client
 - Organisation
 - Efficacité
-- Stage Opérateur Fives FCB (59) Juin-Juillet 2025
-- Analyse physique/Chimique
-- Manutention
-- Projet Objets connectés Mars-Mai 2025
-Réalisation d'un capteur cardiaque :
-- Amplificateur
-- Convertisseur Analogique-Numérique
-- Traitement numérique du signal
-- Travail dans une Ferme (Belgique) Juin-Juillet 2022
-- Arbitre de Handball (59) 2018-2020
+
+- Conception d'un Moniteur Cardiaque Connecté Mars-Mai 2025
+- Conception de la chaîne d'acquisition analogique
+- Architecture système et transmission
+- Traitement du signal
 
 # CENTRES D'INTÉRÊT
 
