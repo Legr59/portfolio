@@ -23,38 +23,48 @@
                 </div>
             </div>
             
-            <form class="contact-form" [action]="formspreeUrl" method="POST" [formGroup]="contactForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" formControlName="name" required placeholder="Your name">
-                </div>
+            <div class="contact-form-container" style="min-height: 400px;">
+                @if (!isSuccess) {
+                    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" formControlName="name" required placeholder="Your name">
+                        </div>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="_replyto" formControlName="email" required placeholder="your.email@example.com">
-                    @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
-                        <small style="color: #ff6b6b;">Please enter a valid email (example@mail.com)</small>
-                    }
-                </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" formControlName="email" required placeholder="your.email@example.com">
+                            @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+                                <small style="color: #ff6b6b;">Veuillez entrer un email valide.</small>
+                            }
+                        </div>
 
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" formControlName="message" rows="5" required placeholder="Your message..."></textarea>
-                    @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
-                        <small style="color: #ff6b6b;">Message must be at least 2 characters.</small>
-                    }
-                </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" formControlName="message" rows="5" required placeholder="Your message..."></textarea>
+                        </div>
 
-                <button type="submit" class="cta-button" [disabled]="contactForm.invalid" [style.opacity]="contactForm.invalid ? '0.5' : '1'">
-                    Send Message
-                </button>
+                        @if (errorMessage) {
+                            <p style="color: #ff6b6b; margin-bottom: 20px;">{{ errorMessage }}</p>
+                        }
 
-                @if (contactForm.invalid && (contactForm.get('email')?.touched || contactForm.get('name')?.touched)) {
-                    <p style="font-size: 0.8rem; color: #ff6b6b; margin-top: 10px;">
-                        Make sure the email is valid and all fields are filled.
-                    </p>
+                        <button type="submit" class="cta-button" 
+                                [disabled]="contactForm.invalid || isSubmitting" 
+                                [style.opacity]="(contactForm.invalid || isSubmitting) ? '0.5' : '1'">
+                            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                        </button>
+                    </form>
+                } @else {
+                    <div class="success-message" style="text-align: center; padding: 40px; border: 1px solid var(--accent-primary); border-radius: 12px; background: rgba(52, 152, 219, 0.1);">
+                        <svg viewBox="0 0 24 24" fill="var(--accent-primary)" style="width: 60px; height: 60px; margin-bottom: 20px;">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                        <h3>Thank you, Martin!</h3>
+                        <p>Your message has been sent successfully. I will get back to you as soon as possible.</p>
+                        <button class="cta-button" (click)="isSuccess = false" style="margin-top: 20px;">Send another message</button>
+                    </div>
                 }
-            </form>
+            </div>
         </div>
     </div>
 </section>
