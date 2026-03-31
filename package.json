@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href /portfolio/",
+    "predeploy": "npm run build",
+    "deploy": "npx -y angular-cli-ghpages --dir=dist/angular-portfolio/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
