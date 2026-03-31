@@ -51,7 +51,7 @@
                     <div class="timeline-content">
                         <span class="timeline-date">2026 – 2027 <span
                                 class="semester-status upcoming">Upcoming</span></span>
-                        <h3>Année de Césure</h3>
+                        <h3>Gap Year</h3>
                         <p class="timeline-summary">Gap Year — Professional & International Experience</p>
                         <ul style="margin: 15px 0; padding-left: 20px; color: var(--text-secondary);">
                             <li><strong>6-month internship</strong> — Currently searching for an engineering internship
@@ -64,37 +64,58 @@
                 </div>
 
                 <!-- S8 - Current -->
-                <div class="timeline-item">
+                <div class="timeline-item expandable" onclick="this.classList.toggle('expanded')">
                     <div class="timeline-content">
                         <span class="timeline-date">Spring 2026 <span
                                 class="semester-status current">Current</span></span>
                         <h3>S8 — InSys Track</h3>
                         <p class="timeline-summary">ENSEEIHT Toulouse — Systems Integration Specialization</p>
-                        <ul style="margin: 15px 0; padding-left: 20px; color: var(--text-secondary);">
-                            <li>Microwave Engineering (Hyperfréquences)</li>
-                            <li>Cleanroom Laboratory Sessions</li>
-                            <li>Digital Systems Architecture</li>
-                            <li>Optoelectronic Circuits</li>
-                            <li>Nanosatellite Systems</li>
-                        </ul>
+                        <div class="timeline-details">
+                            <p>Advanced semester focusing on integrated systems design and RF technologies:</p>
+                            <ul style="margin: 15px 0; padding-left: 20px; color: var(--text-secondary);">
+                                <li><strong>Microwave Engineering</strong> — Waveguide theory, antenna design and
+                                    simulation (HFSS), S-parameter analysis</li>
+                                <li><strong>Cleanroom Laboratory</strong> — CMOS fabrication process, lithography,
+                                    etching, and doping techniques</li>
+                                <li><strong>Digital Systems Architecture</strong> — Advanced FPGA-based SoC design and
+                                    hardware/software co-design</li>
+                                <li><strong>Optoelectronic Circuits</strong> — Optical fiber communication links and
+                                    photodetector systems</li>
+                                <li><strong>Nanosatellite Systems</strong> — CubeSat subsystem design including power,
+                                    communication, and payload</li>
+                            </ul>
+                        </div>
+                        <span class="expand-hint">Click for more details</span>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
 
                 <!-- S7 - Completed -->
-                <div class="timeline-item">
+                <div class="timeline-item expandable" onclick="this.classList.toggle('expanded')">
                     <div class="timeline-content">
                         <span class="timeline-date">Autumn 2025 <span
                                 class="semester-status completed">Completed</span></span>
                         <h3>S7 — Electronics</h3>
                         <p class="timeline-summary">ENSEEIHT Toulouse — 3EA Department</p>
-                        <ul style="margin: 15px 0; padding-left: 20px; color: var(--text-secondary);">
-                            <li><strong>RF Analog Electronics</strong></li>
-                            <li><strong>LF Analog Electronics</strong> — Project: FM Optoelectronic Link</li>
-                            <li><strong>Digital Electronics (VHDL)</strong> — Project: Frequency Meter</li>
-                            <li>Electromagnetic Propagation</li>
-                            <li><strong>Information Processing (OOP, C++)</strong> — Project: RFID Access Control</li>
-                        </ul>
+                        <div class="timeline-details">
+                            <p>Core electronics semester with hands-on project work:</p>
+                            <ul style="margin: 15px 0; padding-left: 20px; color: var(--text-secondary);">
+                                <li><strong>RF Analog Electronics</strong> — High-frequency amplifier design, impedance
+                                    matching, noise figure analysis</li>
+                                <li><strong>LF Analog Electronics</strong> — Transistor-level circuit design;
+                                    <em>Project: FM Optoelectronic Link</em> (VCO modulation, PLL demodulation,
+                                    push-pull power stage)</li>
+                                <li><strong>Digital Electronics (VHDL)</strong> — FSM design, fixed-point arithmetic on
+                                    FPGA; <em>Project: Frequency Meter</em> on Artix-7 with XADC and 7-segment display
+                                </li>
+                                <li><strong>Electromagnetic Propagation</strong> — Wave propagation, transmission lines,
+                                    Smith chart analysis</li>
+                                <li><strong>Information Processing (OOP, C++)</strong> — Object-oriented programming and
+                                    embedded systems; <em>Project: RFID Access Control</em> with PIC18F microcontroller
+                                    and NFC</li>
+                            </ul>
+                        </div>
+                        <span class="expand-hint">Click for more details</span>
                     </div>
                     <div class="timeline-dot"></div>
                 </div>
