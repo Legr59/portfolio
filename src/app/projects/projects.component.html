@@ -1,0 +1,239 @@
+<!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Academic Projects</h1>
+            <p>Technical projects and research work in electronics engineering</p>
+        </div>
+    </header>
+
+    <!-- Projects List -->
+    <section class="section">
+        <div class="container">
+            <div class="projects-list">
+
+                <div class="project-card-detailed">
+                    <div class="project-header">
+                        <span class="project-meta">ENSEEIHT • 2025-2026</span>
+                        <span class="project-type">Analog Systems Project</span>
+                    </div>
+                    <h3 class="project-title">FM Optoelectronic Link: Emitter & Receiver Design</h3>
+                    <p class="project-description">Design and hardware implementation of a complete frequency-modulated
+                        (FM) optical communication system for audio transmission. This project involved the precise
+                        sizing of modulation, demodulation, and power stages.</p>
+
+                    <div class="project-columns">
+                        <div class="project-column">
+                            <h4>Emitter: FM Modulation & LED Driving</h4>
+                            <ul>
+                                <li><strong>Input Conditioning:</strong> Active audio filter boosting high frequencies
+                                    to improve signal-to-noise ratio (SNR) before modulation.</li>
+                                <li><strong>FM Modulation:</strong> Voltage-Controlled Oscillator (VCO) centered at
+                                    carrier frequency f₀, converting audio signals into frequency deviations.</li>
+                                <li><strong>Optical Transmission:</strong> LED driver circuit (Bipolar/MOS) optimizing
+                                    linearity and rise time for reliable IR transmission.</li>
+                            </ul>
+                        </div>
+                        <div class="project-column">
+                            <h4>Receiver: Demodulation & Power Output</h4>
+                            <ul>
+                                <li><strong>Transimpedance:</strong> Photodiode current conversion followed by high-gain
+                                    cascode and differential pair amplification with signal clipping.</li>
+                                <li><strong>FM Demodulation:</strong> Phase-Locked Loop (PLL) system for accurate
+                                    frequency-to-voltage conversion.</li>
+                                <li><strong>Signal Filtering:</strong> Active filter removing high-frequency harmonics
+                                    to recover the original audio spectrum.</li>
+                                <li><strong>Power Stage:</strong> Class AB Push-Pull amplifier providing high current
+                                    gain to drive the speaker load.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-tags">
+                        <span class="tag">VCO & PLL Systems</span>
+                        <span class="tag">FM Modulation</span>
+                        <span class="tag">Push-Pull Power Amp</span>
+                        <span class="tag">Optoelectronics</span>
+                        <span class="tag">PSpice</span>
+                    </div>
+                </div>
+
+                <!-- RFID Project -->
+                <div class="project-card-detailed">
+                    <div class="project-header">
+                        <span class="project-meta">ENSEEIHT • 2025-2026</span>
+                        <span class="project-type">Embedded Systems Project</span>
+                    </div>
+                    <h3 class="project-title">RFID-Based Access Control System</h3>
+                    <p class="project-description">Development of an automated security system using a PIC18F
+                        microcontroller. The project integrates an RFID reader and a servo-controlled door mechanism,
+                        focusing on real-time embedded communication and hardware-software synchronization.</p>
+
+                    <div class="project-columns">
+                        <div class="project-column">
+                            <h4>Embedded Hardware & Communication</h4>
+                            <ul>
+                                <li><strong>RFID Interfacing:</strong> Establishing robust communication between the
+                                    PIC18F and a CR95HF module using the UART protocol.</li>
+                                <li><strong>Protocol Management:</strong> Implementing NFC tag detection and
+                                    identification by parsing hex-command responses from the RFID click.</li>
+                                <li><strong>Actuator Driving:</strong> Implementing a PWM (Pulse Width Modulation)
+                                    signal to control precise servo-motor angles for door operation.</li>
+                            </ul>
+                        </div>
+                        <div class="project-column">
+                            <h4>Firmware & Control Logic</h4>
+                            <ul>
+                                <li><strong>Low-Level C Development:</strong> Programming the control loop in MPLAB X,
+                                    optimizing register-level configurations for ADC and Timers.</li>
+                                <li><strong>Interrupt Handling:</strong> Utilizing hardware interrupts for efficient tag
+                                    polling and event management without blocking the main CPU.</li>
+                                <li><strong>Safety Features:</strong> Implementation of identity validation routines and
+                                    integration of a temperature-based security interlock.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-tags">
+                        <span class="tag">PIC18F / MPLAB X / Debugging</span>
+                        <span class="tag">UART / NFC Protocol</span>
+                        <span class="tag">PWM Control</span>
+                        <span class="tag">Embedded C</span>
+                    </div>
+                </div>
+
+                <!-- FPGA Project -->
+                <div class="project-card-detailed">
+                    <div class="project-header">
+                        <span class="project-meta">ENSEEIHT • 2025-2026</span>
+                        <span class="project-type">Digital Systems Project</span>
+                    </div>
+                    <h3 class="project-title">FPGA Digital Front-End & Frequency Meter</h3>
+                    <p class="project-description">Design and VHDL implementation of a high-speed digital signal
+                        processing chain on an Artix-7 FPGA. The system acquires optical "sawtooth" fringe signals to
+                        calculate and display their frequency in real-time.</p>
+
+                    <div class="project-columns">
+                        <div class="project-column">
+                            <h4>Digital Signal Processing (DSP)</h4>
+                            <ul>
+                                <li><strong>Fixed-Point Filtering:</strong> Implementation of a 1st-order High-Pass
+                                    filter (10kHz cutoff) using Euler approximation and optimized bit-truncation.</li>
+                                <li><strong>Edge Enhancement:</strong> Hardware-based derivation and dynamic
+                                    thresholding to convert analog fringes into a robust binary pulse signal.</li>
+                                <li><strong>Data Acquisition:</strong> Interfacing a native 12-bit XADC (1MHz sampling)
+                                    and an external 12-bit DAC for real-time signal monitoring.</li>
+                            </ul>
+                        </div>
+                        <div class="project-column">
+                            <h4>Logic Design & Architecture</h4>
+                            <ul>
+                                <li><strong>VHDL Modeling:</strong> Structural and behavioral coding of mathematical
+                                    operators, registers, and synchronous state machines.</li>
+                                <li><strong>Frequency Measurement:</strong> Implementation of a high-resolution
+                                    frequency counter with a 100ms refresh rate and 4-digit precision.</li>
+                                <li><strong>Hardware Interfacing:</strong> Management of 7-segment display multiplexing
+                                    and Pmod DA2 communication protocols.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-tags">
+                        <span class="tag">VHDL / Vivado</span>
+                        <span class="tag">Artix-7 FPGA</span>
+                        <span class="tag">Fixed-Point DSP</span>
+                        <span class="tag">Digital Control Logic</span>
+                    </div>
+                </div>
+
+                <!-- IoT Heart Monitor Project -->
+                <div class="project-card-detailed">
+                    <div class="project-header">
+                        <span class="project-meta">ENSEEIHT • 2024-2025</span>
+                        <span class="project-type">IoT Project</span>
+                    </div>
+                    <h3 class="project-title">IoT Heart Monitor Development</h3>
+                    <p class="project-description">Implementation of a complete photoplethysmography (PPG) acquisition
+                        chain. This project required designing a custom analog front-end, digitizing signals via FPGA,
+                        and performing automated diagnostics.</p>
+
+                    <div class="project-columns">
+                        <div class="project-column">
+                            <h4>Analog & Mixed-Signal Design</h4>
+                            <ul>
+                                <li><strong>3-Stage Amplifier Sizing:</strong> Engineered a custom chain featuring a
+                                    Common Drain stage for high input impedance, a Differential Pair for precise gain,
+                                    and a Common Collector for low output impedance. Designed the whole PCB on PSpice.
+                                </li>
+                                <li><strong>Analog Filtering:</strong> Implementation of a Rauch active filter to
+                                    eliminate 50Hz electrical noise and define the frequency bandwidth for PPG signals.
+                                </li>
+                                <li><strong>ADC Design:</strong> Development of an 8-bit Single-Slope ADC implemented on
+                                    a DE1-SoC FPGA via Quartus.</li>
+                            </ul>
+                        </div>
+                        <div class="project-column">
+                            <h4>Digital Signal Processing & Analysis</h4>
+                            <ul>
+                                <li><strong>Matlab Processing:</strong> Signal filtering using Savitzky-Golay (FIR) and
+                                    Butterworth (IIR) algorithms for optimal noise reduction.</li>
+                                <li><strong>Pulse Wave Velocity:</strong> Extraction of physiological parameters,
+                                    including systolic peak detection and heart rate calculation.</li>
+                                <li><strong>Statistical Diagnosis:</strong> Implementation of Neyman-Pearson tests for
+                                    automated detection of tachycardia, bradycardia, and arrhythmia.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-tags">
+                        <span class="tag">Analog Sizing</span>
+                        <span class="tag">PSpice</span>
+                        <span class="tag">Mixed-Signal Systems</span>
+                        <span class="tag">FPGA</span>
+                        <span class="tag">Quartus</span>
+                        <span class="tag">Statistical Signal Processing</span>
+                        <span class="tag">Matlab</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Learnings -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title">Key Learnings</h2>
+            <div class="about-highlights">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19.8 18.4L14 10.67V6.5l1.35-1.69c.26-.33.03-.81-.39-.81H9.04c-.42 0-.65.48-.39.81L10 6.5v4.17L4.2 18.4c-.49.66-.02 1.6.8 1.6h14c.82 0 1.29-.94.8-1.6z" />
+                        </svg>
+                    </div>
+                    <h3>Methodology</h3>
+                    <p>Applying rigorous engineering methodologies from design to implementation</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                        </svg>
+                    </div>
+                    <h3>Teamwork</h3>
+                    <p>Collaborating effectively on complex technical projects</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                        </svg>
+                    </div>
+                    <h3>Analysis</h3>
+                    <p>Data-driven decision making and performance optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
