@@ -1,3 +1,4 @@
+import { RouterLink } from '@angular/router';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -11,7 +12,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 })
 export class Contact {
   contactForm: FormGroup;
-
+  
   // Remplacer YOUR_FORM_ID par votre ID réel de Formspree
   formspreeId = 'xojpwbgp';
   formspreeUrl = `https://formspree.io/f/${this.formspreeId}`;
@@ -38,14 +39,11 @@ export class Contact {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required, Validators.minLength(10)]]
+      message: ['', [Validators.required, Validators.minLength(2)]]
     });
   }
 
   onSubmit() {
-    if (this.contactForm.valid) {
-      // Le formulaire sera envoyé naturellement via l'action du HTML
-      // en respectant les données de Formspree.
-    }
+    // Le formulaire est envoyé par l'action HTML standard
   }
 }
