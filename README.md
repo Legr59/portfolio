@@ -1,49 +1,59 @@
-# E-Portfolio
+# AngularPortfolio
 
-A professional e-portfolio website showcasing my academic journey, projects, and career aspirations as an engineering student at ENSEEIHT (N7).
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.5.
 
-## 🌐 Live Site
+## Development server
 
-Visit: `https://[your-username].github.io/[repo-name]/`
+To start a local development server, run:
 
-## 📁 Structure
-
-```
-├── index.html          # Home / About Me
-├── education.html      # Academic timeline & skills
-├── projects.html       # Academic projects
-├── activities.html     # Sports & extracurriculars
-├── mobility.html       # International experiences (PPP)
-├── professional.html   # Career goals
-├── css/style.css       # Styling
-├── js/main.js          # Interactions
-└── images/             # Profile & project images
+```bash
+ng serve
 ```
 
-## 🚀 Deployment on GitHub Pages
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-1. Create a new repository on GitHub
-2. Push this code to the `main` branch:
+## Code scaffolding
 
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial e-portfolio"
-   git branch -M main
-   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
-   git push -u origin main
-   ```
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-3. Go to **Settings** → **Pages**
-4. Under "Source", select **Deploy from a branch**
-5. Choose `main` branch and `/ (root)` folder
-6. Click **Save**
-7. Your site will be live in a few minutes!
+```bash
+ng generate component component-name
+```
 
-## ✏️ Customization
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-Replace all `[Your Name]`, `[Your Specialty]`, and other bracketed placeholders with your actual information.
+```bash
+ng generate --help
+```
 
-## 📄 License
+## Building
 
-© 2026 [Your Name]. All rights reserved.
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
