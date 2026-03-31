@@ -11,9 +11,9 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 })
 export class Contact {
   contactForm: FormGroup;
-  
+
   // Remplacer YOUR_FORM_ID par votre ID réel de Formspree
-  formspreeId = 'YOUR_FORM_ID';
+  formspreeId = 'xojpwbgp';
   formspreeUrl = `https://formspree.io/f/${this.formspreeId}`;
 
   contactItems = [
