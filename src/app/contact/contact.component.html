@@ -1,57 +1,53 @@
 <header class="page-header">
-        <div class="container">
-            <h1>Contact Me</h1>
-            <p>Get in touch for opportunities and collaborations</p>
-        </div>
-    </header>
+    <div class="container">
+        <h1>Contact Me</h1>
+        <p>Get in touch for opportunities and collaborations</p>
+    </div>
+</header>
 
-    <section class="section">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm open to discussing opportunities, collaborations, or conversations about electronics and
-                        innovation.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                            </svg>
-                            <span>legranmar@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                            </svg>
-                            <span>Toulouse, France</span>
-                        </div>
-                        <div class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                            </svg>
-                            <span>+33 6 79 94 09 04</span>
-                        </div>
+<section class="section">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>I'm open to discussing opportunities, collaborations, or conversations about electronics and innovation.</p>
+                <div class="contact-details">
+                    @for (item of contactItems; track item.label) {
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path [attr.d]="item.icon" />
+                        </svg>
+                        <span>{{ item.value }}</span>
                     </div>
+                    }
                 </div>
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required
-                            placeholder="Your message..."></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
             </div>
+            
+            <!-- Le formulaire utilise l'action de Formspree -->
+            <form class="contact-form" [action]="formspreeUrl" method="POST" [formGroup]="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" formControlName="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" formControlName="email" required placeholder="your.email@example.com"
+                        [class.invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" formControlName="message" rows="5" required placeholder="Your message..."></textarea>
+                </div>
+                <!-- Le bouton n'est cliquable que si le formulaire est valide ! -->
+                <button type="submit" class="cta-button" [disabled]="contactForm.invalid" [style.opacity]="contactForm.invalid ? '0.5' : '1'">
+                    Send Message
+                </button>
+                @if (contactForm.invalid && contactForm.touched) {
+                    <p style="font-size: 0.8rem; color: #ff6b6b; margin-top: 10px;">
+                        Please fill out all fields correctly to send.
+                    </p>
+                }
+            </form>
         </div>
-    </section>
+    </div>
+</section>
