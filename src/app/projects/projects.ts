@@ -11,6 +11,33 @@ import { CommonModule } from '@angular/common';
 export class Projects {
   academicProjects = [
     {
+      meta: 'SERMA Ingénierie • Summer 2026',
+      type: 'Industry Internship — Aerospace & Defense',
+      title: 'Embedded Test Bench for Avionics Validation',
+      description: 'Design and implementation of a critical validation test bench for embedded electronic systems at SERMA Ingénierie, Aix-en-Provence. Integrated within a multidisciplinary team (system, electronics, embedded software, mechatronics engineers) to deliver a complete development cycle from specification to validation.',
+      columns: [
+        {
+          title: 'Embedded Development & Architecture',
+          tasks: [
+            'Test bench architecture design and technical specification definition.',
+            'Embedded C programming of the control module deployed on Raspberry Pi.',
+            'CAN FD protocol integration for real-time communication with avionics systems.',
+            'Definition of rigorous test scenarios for safety-critical validation.'
+          ]
+        },
+        {
+          title: 'HMI & Validation',
+          tasks: [
+            'Angular-based user interface development (TypeScript, HTML, CSS).',
+            'Real-time visualization of test data and results dashboard.',
+            'Test execution, result analysis, and functional/safety requirements validation.',
+            'Active collaboration with expert engineers in aerospace and defense.'
+          ]
+        }
+      ],
+      tags: ['Embedded C', 'Raspberry Pi', 'CAN FD', 'Angular / TypeScript', 'Aerospace', 'Test Bench']
+    },
+    {
       meta: 'ENSEEIHT • 2025-2026',
       type: 'Analog Systems Project',
       title: 'FM Optoelectronic Link: Emitter & Receiver Design',

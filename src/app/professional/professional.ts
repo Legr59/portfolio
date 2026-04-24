@@ -45,6 +45,18 @@ export class Professional {
 
   experiences = [
     {
+      role: 'Embedded Systems & Test Bench Intern',
+      company: 'SERMA Ingénierie — Aix-en-Provence (13)',
+      date: 'June - August 2026',
+      description: 'Development of critical validation tools for the aerospace and defense industry within a multidisciplinary engineering team. Designed and implemented a test bench for validating demanding embedded electronic systems, covering the full development cycle from specification to integration.',
+      skills: [
+        'Test bench architecture design & specification',
+        'Embedded C programming on Raspberry Pi with CAN FD protocol',
+        'HMI development with Angular (TypeScript, HTML, CSS)',
+        'Functional and safety requirements validation'
+      ]
+    },
+    {
       role: 'Versatile Employee',
       company: 'Carter-Cash — Comines (59)',
       date: 'August 2025',
