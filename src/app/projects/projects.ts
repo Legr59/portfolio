@@ -46,8 +46,8 @@ export class Projects {
         {
           title: '1-Wire Protocol & FSM Design',
           tasks: [
-            'Protocol Implementation: Full 1-Wire timing with µs-precision Init (reset/presence), Write (bit-level open-drain), and Read (9-bit sampling) FSMs.',
-            'Master Orchestrator: Top-level FSM sequencing Skip ROM (0xCC), Convert T (0x44), 800ms conversion wait, and Read Scratchpad (0xBE) commands via internal ROM.',
+            'Protocol Implementation: Full 1-Wire timing with µs-precision Init (reset/presence), Write, and Read (9-bit sampling) FSMs.',
+            'Master Orchestrator: Top-level FSM sequencing Skip ROM, Convert T, 800ms conversion wait, and Read Scratchpad commands via internal ROM.',
             'Error Handling: Robust timeout detection, presence pulse validation (15–60 µs window), and automatic recovery state machine.',
           ]
         },
@@ -56,7 +56,7 @@ export class Projects {
           tasks: [
             'Modular Hierarchy: 12 VHDL modules organized in top-down layers (utilities, protocol, orchestration, display) with clean signal interfaces.',
             'Metastability Protection: Double flip-flop resynchronizer and synchronous reset generator for reliable external signal handling.',
-            'BCD Display Engine: Double Dabble binary-to-BCD converter with 1kHz multiplexed 7-segment output, zero blanking, sign display, and decimal point.',
+            'BCD Display Engine: Double Dabble binary-to-BCD converter with multiplexed 7-segment output, zero blanking, sign display, and decimal point.',
           ]
         }
       ],
