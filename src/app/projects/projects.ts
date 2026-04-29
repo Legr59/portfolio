@@ -41,7 +41,7 @@ export class Projects {
       meta: 'ENSEEIHT • 2025-2026',
       type: 'Digital Systems Project',
       title: 'FPGA 1-Wire Digital Thermometer — DS18S20 Interface',
-      description: 'Complete design and VHDL implementation of a 1-Wire digital thermometer system on a Nexys A7 (Artix-7) FPGA. The system implements the full Dallas/Maxim 1-Wire protocol to communicate with a DS18S20 temperature sensor, handling initialization (reset/presence pulse), ROM commands, temperature conversion, and data readback. Temperature is displayed in real-time on the board\'s 7-segment displays with sign handling and decimal precision.',
+      description: 'Complete design and VHDL implementation of a 1-Wire digital thermometer system on a Nexys A7 FPGA. The system implements the 1-Wire protocol to communicate with a DS18S20 temperature sensor, handling initialization (reset/presence pulse), ROM commands, temperature conversion, and data readback. Temperature is displayed in real-time on the board\'s 7-segment displays with sign handling and decimal precision.',
       columns: [
         {
           title: '1-Wire Protocol & FSM Design',
@@ -49,7 +49,6 @@ export class Projects {
             'Protocol Implementation: Full 1-Wire timing with µs-precision Init (reset/presence), Write (bit-level open-drain), and Read (9-bit sampling) FSMs.',
             'Master Orchestrator: Top-level FSM sequencing Skip ROM (0xCC), Convert T (0x44), 800ms conversion wait, and Read Scratchpad (0xBE) commands via internal ROM.',
             'Error Handling: Robust timeout detection, presence pulse validation (15–60 µs window), and automatic recovery state machine.',
-            'Open-Drain Bus: Combined tri-state output logic (AND gate) emulating wired-AND 1-Wire behavior across all protocol modules.'
           ]
         },
         {
@@ -58,7 +57,6 @@ export class Projects {
             'Modular Hierarchy: 12 VHDL modules organized in top-down layers (utilities, protocol, orchestration, display) with clean signal interfaces.',
             'Metastability Protection: Double flip-flop resynchronizer and synchronous reset generator for reliable external signal handling.',
             'BCD Display Engine: Double Dabble binary-to-BCD converter with 1kHz multiplexed 7-segment output, zero blanking, sign display, and decimal point.',
-            'Exhaustive Verification: 11 testbenches including a full DS18S20 behavioral emulator for end-to-end system simulation without hardware.'
           ]
         }
       ],
