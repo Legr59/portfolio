@@ -1,0 +1,25 @@
+<div class="timeline-item" 
+     [class.expandable]="item().details.length > 0" 
+     [class.expanded]="isExpanded()" 
+     (click)="toggleExpand()">
+    <app-card-wrapper borderStyle="full" hoverEffect="lift" class="timeline-content">
+        <span class="timeline-date">
+            {{ item().date }}
+            <span class="semester-status" [ngClass]="item().status">{{ item().statusLabel }}</span>
+        </span>
+        <h3>{{ item().title }}</h3>
+        <p class="timeline-summary">{{ item().summary }}</p>
+        
+        @if (item().details.length > 0) {
+        <div class="timeline-details">
+            <ul style="margin: 15px 0; padding-left: 20px; color: var(--text-secondary);">
+                @for (detail of item().details; track detail) {
+                    <li>{{ detail }}</li>
+                }
+            </ul>
+        </div>
+        <span class="expand-hint">Click for more details</span>
+        }
+    </app-card-wrapper>
+    <div class="timeline-dot"></div>
+</div>

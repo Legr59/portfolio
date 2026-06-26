@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { Home } from './components/home/home';
-import { Education } from './components/education/education';
-import { Professional } from './components/professional/professional';
-import { Projects } from './components/projects/projects';
-import { Activities } from './components/activities/activities';
-import { Mobility } from './components/mobility/mobility';
-import { Contact } from './components/contact/contact';
+import { Home } from './components/home/home.component';
+import { Education } from './components/education/education.component';
+import { Professional } from './components/professional/professional.component';
+import { Projects } from './components/projects/projects.component';
+import { Activities } from './components/activities/activities.component';
+import { Mobility } from './components/mobility/mobility.component';
+import { Contact } from './components/contact/contact.component';
 
 export const routes: Routes = [
   { path: '', component: Home },

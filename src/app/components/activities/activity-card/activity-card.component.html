@@ -1,0 +1,28 @@
+<app-card-wrapper hoverEffect="lift" borderStyle="full" [glowColor]="(iconColor() && iconColor() !== 'currentColor') ? iconColor() : 'var(--accent-primary)'">
+    <div class="activity-logo">
+        @if (logo()) {
+            <img [src]="logo()" [alt]="title()">
+        } @else if (icon()) {
+            <svg viewBox="0 0 24 24" [attr.fill]="iconColor()" width="60" height="60">
+                <path [attr.d]="icon()" />
+            </svg>
+        }
+    </div>
+    <div class="activity-content">
+        <div class="activity-header">
+            <h3>{{ title() }}</h3>
+            <span class="activity-role">{{ role() }}</span>
+        </div>
+        <p>{{ desc() }}</p>
+        <ul class="activity-details">
+            @for (detail of details(); track detail) {
+                <li>{{ detail }}</li>
+            }
+        </ul>
+        <div class="content-tags">
+            @for (tag of tags(); track tag) {
+                <span class="tag">{{ tag }}</span>
+            }
+        </div>
+    </div>
+</app-card-wrapper>

@@ -1,9 +1,7 @@
-<header class="page-header">
-    <div class="container">
-        <h1>International Profile</h1>
-        <p>Languages, mobility, and global perspective</p>
-    </div>
-</header>
+<app-page-header 
+    title="International Profile" 
+    subtitle="Languages, mobility, and global perspective">
+</app-page-header>
 
 <section class="section">
     <div class="container">
@@ -13,15 +11,11 @@
         </p>
         <div class="about-highlights">
             @for (skill of pceSkills; track skill.title) {
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path [attr.d]="skill.icon" />
-                    </svg>
-                </div>
-                <h3>{{ skill.title }}</h3>
-                <p>{{ skill.desc }}</p>
-            </div>
+                <app-highlight-card 
+                    [title]="skill.title" 
+                    [desc]="skill.desc" 
+                    [icon]="skill.icon">
+                </app-highlight-card>
             }
         </div>
     </div>
@@ -32,13 +26,11 @@
         <h2 class="section-title">Language Skills</h2>
         <div class="about-highlights">
             @for (lang of languages; track lang.title) {
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" /></svg>
-                </div>
-                <h3>{{ lang.title }}</h3>
-                <p>{{ lang.level }}</p>
-            </div>
+                <app-highlight-card 
+                    [title]="lang.title" 
+                    [desc]="lang.level"
+                    [icon]="lang.icon">
+                </app-highlight-card>
             }
         </div>
     </div>
@@ -52,25 +44,13 @@
         </p>
         <div class="about-highlights">
             @for (goal of internationalGoals; track goal.title) {
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path [attr.d]="goal.icon" />
-                    </svg>
-                </div>
-                <h3>{{ goal.title }}</h3>
-                <p>{{ goal.desc }}</p>
-                @if (goal.bulletPoints.length > 0) {
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border-color);">
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 10px;"><strong>{{ goal.listTitle }}</strong></p>
-                    <ul style="font-size: 0.85rem; color: var(--text-secondary); padding-left: 20px; margin: 0;">
-                        @for (point of goal.bulletPoints; track point) {
-                            <li>{{ point }}</li>
-                        }
-                    </ul>
-                </div>
-                }
-            </div>
+                <app-highlight-card 
+                    [title]="goal.title" 
+                    [desc]="goal.desc" 
+                    [icon]="goal.icon"
+                    [listTitle]="goal.listTitle"
+                    [bulletPoints]="goal.bulletPoints">
+                </app-highlight-card>
             }
         </div>
     </div>

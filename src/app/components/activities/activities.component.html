@@ -1,10 +1,7 @@
-<!-- Page Header -->
-<header class="page-header">
-    <div class="container">
-        <h1>Hobbies & Student Involvement</h1>
-        <p>My community roles and personal passions beyond academics</p>
-    </div>
-</header>
+<app-page-header 
+    title="Hobbies & Student Involvement" 
+    subtitle="My community roles and personal passions beyond academics">
+</app-page-header>
 
 <!-- Student Involvement Section -->
 <section class="section">
@@ -12,28 +9,14 @@
         <h2 class="section-title">Student Involvement</h2>
         <div class="activities-grid">
             @for (inv of involvements; track inv.title) {
-            <div class="activity-card">
-                <div class="activity-logo">
-                    <img [src]="inv.logo" [alt]="inv.title">
-                </div>
-                <div class="activity-content">
-                    <div class="activity-header">
-                        <h3>{{ inv.title }}</h3>
-                        <span class="activity-role">{{ inv.role }}</span>
-                    </div>
-                    <p>{{ inv.desc }}</p>
-                    <ul class="activity-details">
-                        @for (detail of inv.details; track detail) {
-                            <li>{{ detail }}</li>
-                        }
-                    </ul>
-                    <div class="content-tags">
-                        @for (tag of inv.tags; track tag) {
-                            <span class="tag">{{ tag }}</span>
-                        }
-                    </div>
-                </div>
-            </div>
+                <app-activity-card 
+                    [title]="inv.title" 
+                    [role]="inv.role" 
+                    [desc]="inv.desc" 
+                    [details]="inv.details" 
+                    [tags]="inv.tags" 
+                    [logo]="inv.logo">
+                </app-activity-card>
             }
         </div>
     </div>
@@ -45,30 +28,15 @@
         <h2 class="section-title">Sports & Personal Passions</h2>
         <div class="activities-grid">
             @for (pass of passions; track pass.title) {
-            <div class="activity-card">
-                <div class="activity-logo">
-                    <svg viewBox="0 0 24 24" [attr.fill]="pass.color" width="60" height="60">
-                        <path [attr.d]="pass.icon" />
-                    </svg>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-header">
-                        <h3>{{ pass.title }}</h3>
-                        <span class="activity-role">{{ pass.role }}</span>
-                    </div>
-                    <p>{{ pass.desc }}</p>
-                    <ul class="activity-details">
-                        @for (detail of pass.details; track detail) {
-                            <li>{{ detail }}</li>
-                        }
-                    </ul>
-                    <div class="content-tags">
-                        @for (tag of pass.tags; track tag) {
-                            <span class="tag">{{ tag }}</span>
-                        }
-                    </div>
-                </div>
-            </div>
+                <app-activity-card 
+                    [title]="pass.title" 
+                    [role]="pass.role" 
+                    [desc]="pass.desc" 
+                    [details]="pass.details" 
+                    [tags]="pass.tags" 
+                    [icon]="pass.icon" 
+                    [iconColor]="pass.color">
+                </app-activity-card>
             }
         </div>
     </div>
@@ -80,15 +48,11 @@
         <h2 class="section-title">Skills Developed</h2>
         <div class="about-highlights">
             @for (skill of skills; track skill.title) {
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path [attr.d]="skill.icon" />
-                    </svg>
-                </div>
-                <h3>{{ skill.title }}</h3>
-                <p>{{ skill.desc }}</p>
-            </div>
+                <app-highlight-card 
+                    [title]="skill.title" 
+                    [desc]="skill.desc" 
+                    [icon]="skill.icon">
+                </app-highlight-card>
             }
         </div>
     </div>

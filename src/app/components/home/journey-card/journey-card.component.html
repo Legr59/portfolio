@@ -1,0 +1,9 @@
+<a [routerLink]="link()" class="link-card">
+    <div class="link-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path [attr.d]="icon()" />
+        </svg>
+    </div>
+    <h3>{{ title() }}</h3>
+    <p>{{ desc() }}</p>
+</a>

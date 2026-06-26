@@ -1,10 +1,7 @@
-<!-- Page Header -->
-<header class="page-header">
-    <div class="container">
-        <h1>Education</h1>
-        <p>My academic journey and specializations in Electronics Engineering</p>
-    </div>
-</header>
+<app-page-header 
+    title="Education" 
+    subtitle="My academic journey and specializations in Electronics Engineering">
+</app-page-header>
 
 <!-- Academic Timeline Section -->
 <section class="section">
@@ -13,28 +10,7 @@
 
         <div class="timeline">
             @for (item of academicTimeline; track item.title) {
-            <div class="timeline-item" [class.expandable]="item.details.length > 0" [class.expanded]="item.expanded" (click)="toggleExpand(item)">
-                <div class="timeline-content">
-                    <span class="timeline-date">
-                        {{ item.date }}
-                        <span class="semester-status" [ngClass]="item.status">{{ item.statusLabel }}</span>
-                    </span>
-                    <h3>{{ item.title }}</h3>
-                    <p class="timeline-summary">{{ item.summary }}</p>
-                    
-                    @if (item.details.length > 0) {
-                    <div class="timeline-details">
-                        <ul style="margin: 15px 0; padding-left: 20px; color: var(--text-secondary);">
-                            @for (detail of item.details; track detail) {
-                                <li>{{ detail }}</li>
-                            }
-                        </ul>
-                    </div>
-                    <span class="expand-hint">Click for more details</span>
-                    }
-                </div>
-                <div class="timeline-dot"></div>
-            </div>
+                <app-timeline-item [item]="item"></app-timeline-item>
             }
         </div>
     </div>

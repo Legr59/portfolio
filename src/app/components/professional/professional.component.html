@@ -1,9 +1,7 @@
-<header class="page-header">
-    <div class="container">
-        <h1>Professional Project</h1>
-        <p>My career aspirations in analog and digital electronics</p>
-    </div>
-</header>
+<app-page-header 
+    title="Professional Project" 
+    subtitle="My career aspirations in analog and digital electronics">
+</app-page-header>
 
 <section class="section">
     <div class="container">
@@ -27,23 +25,7 @@
         <h2 class="section-title">Career Goals</h2>
         <div class="timeline">
             @for (goal of careerGoals; track goal.title) {
-            <div class="timeline-item expandable" [class.expanded]="goal.expanded" (click)="toggleGoal(goal)">
-                <div class="timeline-content">
-                    <span class="timeline-date">{{ goal.date }}</span>
-                    <h3>{{ goal.title }}</h3>
-                    <p class="timeline-summary">{{ goal.summary }}</p>
-                    <div class="timeline-details">
-                        <div style="margin-top: 15px;">
-                            @for (detail of goal.details; track detail.label) {
-                                <p style="font-weight: 600; color: var(--accent-primary); margin-bottom: 5px;">{{ detail.label }}</p>
-                                <p style="margin-bottom: 15px; color: var(--text-secondary);">{{ detail.text }}</p>
-                            }
-                        </div>
-                    </div>
-                    <span class="expand-hint">Click for more details</span>
-                </div>
-                <div class="timeline-dot"></div>
-            </div>
+                <app-goal-card [goal]="goal"></app-goal-card>
             }
         </div>
     </div>
@@ -55,24 +37,7 @@
         <h2 class="section-title">Professional Experience</h2>
         <div class="experience-list">
             @for (exp of experiences; track exp.role) {
-            <div class="experience-card">
-                <div class="experience-header">
-                    <div class="experience-info">
-                        <h3>{{ exp.role }}</h3>
-                        <p class="experience-company">{{ exp.company }}</p>
-                    </div>
-                    <span class="experience-date">{{ exp.date }}</span>
-                </div>
-                <p class="experience-description">{{ exp.description }}</p>
-                <div class="experience-skills">
-                    <span class="experience-skill-title">What I gained:</span>
-                    <ul>
-                        @for (skill of exp.skills; track skill) {
-                            <li>{{ skill }}</li>
-                        }
-                    </ul>
-                </div>
-            </div>
+                <app-experience-card [exp]="exp"></app-experience-card>
             }
         </div>
     </div>
@@ -83,15 +48,11 @@
         <h2 class="section-title">Areas of Interest</h2>
         <div class="about-highlights">
             @for (interest of interests; track interest.title) {
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path [attr.d]="interest.icon" />
-                    </svg>
-                </div>
-                <h3>{{ interest.title }}</h3>
-                <p>{{ interest.desc }}</p>
-            </div>
+                <app-highlight-card 
+                    [title]="interest.title" 
+                    [desc]="interest.desc" 
+                    [icon]="interest.icon">
+                </app-highlight-card>
             }
         </div>
     </div>

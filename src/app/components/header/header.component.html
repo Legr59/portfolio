@@ -1,0 +1,20 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <a routerLink="/" class="nav-logo" (click)="closeMenu()">Martin Legrand</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" [class.active]="isMenuOpen()" (click)="toggleMenu()">
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu" [class.active]="isMenuOpen()">
+            @for (item of menuItems; track item.label) {
+                <li>
+                    <app-nav-button 
+                        [link]="item.link" 
+                        [label]="item.label" 
+                        [exact]="item.exact ?? false"
+                        (clicked)="closeMenu()">
+                    </app-nav-button>
+                </li>
+            }
+        </ul>
+    </div>
+</nav>

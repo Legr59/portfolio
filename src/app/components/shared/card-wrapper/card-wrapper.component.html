@@ -1,0 +1,15 @@
+<div class="card-wrapper" 
+     [class.hover-lift]="hoverEffect() === 'lift'"
+     [class.hover-slide-right]="hoverEffect() === 'slide-right'"
+     [class.border-left-accent]="borderStyle() === 'left-accent'"
+     [class.border-top-accent]="borderStyle() === 'top-accent'"
+     [class.border-full]="borderStyle() === 'full'"
+     [style.--glow-color]="glowColor()"
+     [class.has-glow-color]="glowColor() ? true : false">
+    
+    @if (glowColor()) {
+        <div class="card-glow-halo"></div>
+    }
+    
+    <ng-content></ng-content>
+</div>

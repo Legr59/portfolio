@@ -1,0 +1,17 @@
+<div class="timeline-item expandable" [class.expanded]="isExpanded()" (click)="toggleExpand()">
+    <app-card-wrapper borderStyle="full" hoverEffect="lift" class="timeline-content">
+        <span class="timeline-date">{{ goal().date }}</span>
+        <h3>{{ goal().title }}</h3>
+        <p class="timeline-summary">{{ goal().summary }}</p>
+        <div class="timeline-details">
+            <div style="margin-top: 15px;">
+                @for (detail of goal().details; track detail.label) {
+                    <p style="font-weight: 600; color: var(--accent-primary); margin-bottom: 5px;">{{ detail.label }}</p>
+                    <p style="margin-bottom: 15px; color: var(--text-secondary);">{{ detail.text }}</p>
+                }
+            </div>
+        </div>
+        <span class="expand-hint">Click for more details</span>
+    </app-card-wrapper>
+    <div class="timeline-dot"></div>
+</div>

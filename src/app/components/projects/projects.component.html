@@ -1,84 +1,17 @@
-<!-- Page Header -->
-<header class="page-header">
-    <div class="container">
-        <h1>Projects</h1>
-        <p>Technical projects and professional experiences in electronics engineering</p>
-    </div>
-</header>
+<app-page-header 
+    title="Projects" 
+    subtitle="Technical projects and professional experiences in electronics engineering">
+</app-page-header>
 
 <!-- Projects List -->
 <section class="section">
     <div class="container">
         <div class="projects-list">
-            <!-- Une seule boucle pour tous les projets ! -->
             @for (project of academicProjects; track project.title) {
-            <div class="project-card-detailed">
-                <div class="project-header">
-                    <span class="project-meta">{{ project.meta }}</span>
-                    <span class="project-type">{{ project.type }}</span>
-                </div>
-                <h3 class="project-title">{{ project.title }}</h3>
-                <p class="project-description">{{ project.description }}</p>
-
-                <div class="project-columns">
-                    @for (column of project.columns; track column.title) {
-                    <div class="project-column">
-                        <h4>{{ column.title }}</h4>
-                        <ul>
-                            @for (task of column.tasks; track task) {
-                                <li>{{ task }}</li>
-                            }
-                        </ul>
-                    </div>
-                    }
-                </div>
-
-                <div class="content-tags">
-                    @for (tag of project.tags; track tag) {
-                        <span class="tag">{{ tag }}</span>
-                    }
-                </div>
-            </div>
+                <app-project-item [project]="project"></app-project-item>
             }
         </div>
     </div>
 </section>
 
-<!-- Key Learnings -->
-<section class="section" style="background: var(--bg-secondary);">
-    <div class="container">
-        <h2 class="section-title">Key Learnings</h2>
-        <div class="about-highlights">
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M19.8 18.4L14 10.67V6.5l1.35-1.69c.26-.33.03-.81-.39-.81H9.04c-.42 0-.65.48-.39.81L10 6.5v4.17L4.2 18.4c-.49.66-.02 1.6.8 1.6h14c.82 0 1.29-.94.8-1.6z" />
-                    </svg>
-                </div>
-                <h3>Methodology</h3>
-                <p>Applying rigorous engineering methodologies from design to implementation</p>
-            </div>
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
-                    </svg>
-                </div>
-                <h3>Teamwork</h3>
-                <p>Collaborating effectively on complex technical projects</p>
-            </div>
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
-                    </svg>
-                </div>
-                <h3>Analysis</h3>
-                <p>Data-driven decision making and performance optimization</p>
-            </div>
-        </div>
-    </div>
-</section>
+<app-key-learnings></app-key-learnings>

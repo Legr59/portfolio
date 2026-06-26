@@ -1,0 +1,7 @@
+<a [routerLink]="link()"
+   routerLinkActive="active"
+   [routerLinkActiveOptions]="{ exact: exact() }"
+   class="nav-link"
+   (click)="clicked.emit()">
+  {{ label() }}
+</a>

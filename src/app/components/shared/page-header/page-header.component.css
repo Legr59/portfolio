@@ -1,0 +1,21 @@
+.page-header {
+    padding: calc(var(--nav-height) + 60px) 0 60px;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(var(--accent-primary-rgb), 0.1) 0%, transparent 50%),
+        var(--bg-secondary);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.page-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}

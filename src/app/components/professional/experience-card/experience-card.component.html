@@ -1,0 +1,18 @@
+<app-card-wrapper hoverEffect="slide-right" borderStyle="left-accent">
+    <div class="experience-header">
+        <div class="experience-info">
+            <h3>{{ exp().role }}</h3>
+            <p class="experience-company">{{ exp().company }}</p>
+        </div>
+        <span class="experience-date">{{ exp().date }}</span>
+    </div>
+    <p class="experience-description">{{ exp().description }}</p>
+    <div class="experience-skills">
+        <span class="experience-skill-title">What I gained:</span>
+        <ul>
+            @for (skill of exp().skills; track skill) {
+                <li>{{ skill }}</li>
+            }
+        </ul>
+    </div>
+</app-card-wrapper>

@@ -1,0 +1,355 @@
+/* ===== CSS Variables ===== */
+:root {
+    /* Dark Theme Colors */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #1a1a25;
+    --bg-card-hover: #222230;
+
+    /* Accent Colors */
+    --accent-primary: #4a6cf7;
+    --accent-secondary: #6366f1;
+    --accent-primary-rgb: 74, 108, 247;
+    --accent-secondary-rgb: 99, 102, 241;
+    --accent-glow: rgba(var(--accent-primary-rgb), 0.3);
+
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+
+    /* Borders */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.12);
+
+    /* Spacing */
+    --nav-height: 70px;
+    --section-padding: 100px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 30px var(--accent-glow);
+}
+
+/* ===== Accent Page Themes ===== */
+body.route-home {
+    --accent-primary: #4a6cf7;
+    --accent-secondary: #6366f1;
+    --accent-primary-rgb: 74, 108, 247;
+    --accent-secondary-rgb: 99, 102, 241;
+}
+
+body.route-education {
+    --accent-primary: #10b981;
+    --accent-secondary: #059669;
+    --accent-primary-rgb: 16, 185, 129;
+    --accent-secondary-rgb: 5, 150, 105;
+}
+
+body.route-professional {
+    --accent-primary: #8b5cf6;
+    --accent-secondary: #7c3aed;
+    --accent-primary-rgb: 139, 92, 246;
+    --accent-secondary-rgb: 124, 58, 237;
+}
+
+body.route-projects {
+    --accent-primary: #06b6d4;
+    --accent-secondary: #0891b2;
+    --accent-primary-rgb: 6, 182, 212;
+    --accent-secondary-rgb: 8, 145, 178;
+}
+
+body.route-activities {
+    --accent-primary: #f59e0b;
+    --accent-secondary: #d97706;
+    --accent-primary-rgb: 245, 158, 11;
+    --accent-secondary-rgb: 217, 119, 6;
+}
+
+body.route-mobility {
+    --accent-primary: #ec4899;
+    --accent-secondary: #db2777;
+    --accent-primary-rgb: 236, 72, 153;
+    --accent-secondary-rgb: 219, 39, 119;
+}
+
+body.route-contact {
+    --accent-primary: #3b82f6;
+    --accent-secondary: #2563eb;
+    --accent-primary-rgb: 59, 130, 246;
+    --accent-secondary-rgb: 37, 99, 235;
+}
+
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== Page Transitions ===== */
+.page-transition {
+    animation: fadeSlideIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeSlideIn 0.5s ease-out;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+
+
+/* ===== Sections ===== */
+.section {
+    padding: var(--section-padding) 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 2px;
+}
+
+/* ===== Contact Form ===== */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.contact-info>p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-secondary);
+}
+
+.contact-item svg {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-primary);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 14px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .cta-button {
+    align-self: flex-start;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.contact-form .cta-button svg {
+    transition: transform var(--transition-fast);
+}
+
+.contact-form .cta-button:hover svg {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-form .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-details {
+        justify-content: center;
+    }
+
+    .hero-name {
+        font-size: 2.8rem;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+
+
+    .hero-name {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .profile-placeholder,
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-name {
+        font-size: 1.8rem;
+    }
+
+    .hero-title {
+        font-size: 1.2rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
