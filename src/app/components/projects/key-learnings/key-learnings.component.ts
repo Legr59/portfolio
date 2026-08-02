@@ -7,6 +7,6 @@ import { HighlightCard } from '../../shared/highlight-card/highlight-card.compon
   standalone: true,
   imports: [CommonModule, HighlightCard],
   templateUrl: './key-learnings.component.html',
-  styleUrl: './key-learnings.css'
+  styleUrl: './key-learnings.component.css'
 })
 export class KeyLearnings {}

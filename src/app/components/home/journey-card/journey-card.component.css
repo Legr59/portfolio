@@ -22,7 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(74, 108, 247, 0.12), rgba(99, 102, 241, 0.08));
+    background: linear-gradient(135deg, rgba(var(--accent-primary-rgb), 0.12), rgba(var(--accent-secondary-rgb), 0.08));
     border-radius: 14px;
     color: var(--accent-primary);
     transition: all var(--transition-normal);
