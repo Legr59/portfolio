@@ -1,100 +1,84 @@
-<app-page-header 
-    title="Professional Project" 
-    subtitle="My career aspirations in analog and digital electronics">
-</app-page-header>
+<app-page-header title="Professional Project" subtitle="My career aspirations in analog and digital electronics" />
 
-<section class="section">
-    <div class="container">
-        <h2 class="section-title">My Vision</h2>
-        <div class="about-text" style="max-width: 900px; margin: 0 auto;">
-            <p class="about-intro">
-                My goal is to bridge the gap between theory and innovation, constantly seeking
-                to expand my technical expertise and design the electronic systems of tomorrow.
-            </p>
-            <p style="color: var(--text-secondary); margin-top: 20px; line-height: 1.8;">
-                I am deeply passionate about both analog and digital electronics, and I look
-                forward to building my career and contributing to this field I love. The
-                intersection of hardware design and embedded systems fascinates me.
-            </p>
-        </div>
-    </div>
-</section>
-
+<!-- Career Goals Timeline -->
 <section class="section" style="background: var(--bg-secondary);">
     <div class="container">
         <h2 class="section-title">Career Goals</h2>
         <div class="timeline">
             @for (goal of careerGoals; track goal.title) {
-                <app-goal-card [goal]="goal"></app-goal-card>
+            <div class="timeline-entry expandable" [class.expanded]="goal.expanded" (click)="toggleGoal(goal)">
+                <div class="timeline-axis">
+                    <div class="timeline-dot goal-dot"></div>
+                </div>
+                <app-card-wrapper hoverEffect="lift" borderStyle="left-accent" class="timeline-card">
+                    <div class="timeline-card-inner">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">{{ goal.date }}</span>
+                        </div>
+                        <h3>{{ goal.title }}</h3>
+                        <p class="timeline-summary">{{ goal.summary }}</p>
+                        <div class="timeline-details">
+                            <div class="goal-details">
+                                @for (detail of goal.details; track detail.label) {
+                                <p class="detail-label">{{ detail.label }}</p>
+                                <p class="detail-text">{{ detail.text }}</p>
+                                }
+                            </div>
+                        </div>
+                        <span class="expand-hint">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                                <path d="M7 10l5 5 5-5z" />
+                            </svg>
+                            {{ goal.expanded ? 'Show less' : 'Show details' }}
+                        </span>
+                    </div>
+                </app-card-wrapper>
+            </div>
             }
         </div>
     </div>
 </section>
 
-<!-- Professional Experience Section -->
+<!-- Professional Experience -->
 <section class="section">
     <div class="container">
         <h2 class="section-title">Professional Experience</h2>
-        <div class="experience-list">
+        <div class="experience-grid">
             @for (exp of experiences; track exp.role) {
-                <app-experience-card [exp]="exp"></app-experience-card>
+            <app-card-wrapper hoverEffect="none" borderStyle="left-accent">
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-role">{{ exp.role }}</h3>
+                            <p class="exp-company">{{ exp.company }}</p>
+                        </div>
+                        <span class="exp-date">{{ exp.date }}</span>
+                    </div>
+                    <p class="exp-description">{{ exp.description }}</p>
+                    <div class="exp-skills">
+                        <span class="exp-skills-title">What I gained:</span>
+                        <ul>
+                            @for (skill of exp.skills; track skill) {
+                            <li>{{ skill }}</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </app-card-wrapper>
             }
         </div>
     </div>
 </section>
 
+<!-- Areas of Interest -->
 <section class="section" style="background: var(--bg-secondary);">
     <div class="container">
         <h2 class="section-title">Areas of Interest</h2>
-        <div class="about-highlights">
+        <div class="interests-grid">
             @for (interest of interests; track interest.title) {
-                <app-highlight-card 
-                    [title]="interest.title" 
-                    [desc]="interest.desc" 
-                    [icon]="interest.icon">
-                </app-highlight-card>
+            <app-highlight-card [title]="interest.title" [desc]="interest.desc" [icon]="interest.icon"
+                hoverEffect="none" />
             }
-        </div>
-    </div>
-</section>
-
-<section class="section" id="contact" style="background: var(--bg-secondary);">
-    <div class="container">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="contact-wrapper">
-            <div class="contact-info">
-                <h3>Let's Connect</h3>
-                <p>I'm open to discussing opportunities, collaborations, or conversations about electronics and innovation.</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
-                        <span>legranmar@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
-                        <span>Toulouse, France</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" /></svg>
-                        <span>+33 6 79 94 09 04</span>
-                    </div>
-                </div>
-            </div>
-            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Your name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
-                </div>
-                <button type="submit" class="cta-button">Send Message</button>
-            </form>
         </div>
     </div>
 </section>

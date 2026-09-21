@@ -5,7 +5,8 @@
      [class.border-top-accent]="borderStyle() === 'top-accent'"
      [class.border-full]="borderStyle() === 'full'"
      [style.--glow-color]="glowColor()"
-     [class.has-glow-color]="glowColor() ? true : false">
+     [class.has-glow-color]="glowColor() ? true : false"
+     [class.no-hover]="hoverEffect() === 'none'">
     
     @if (glowColor()) {
         <div class="card-glow-halo"></div>

@@ -7,9 +7,7 @@
     align-items: center;
     padding: calc(var(--nav-height) + 40px) 24px 40px;
     position: relative;
-    background:
-        radial-gradient(ellipse at 50% 0%, rgba(74, 108, 247, 0.15) 0%, transparent 50%),
-        var(--bg-primary);
+    background: var(--bg-primary);
 }
 
 .hero-content {
@@ -28,13 +26,13 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
-    border: 3px solid var(--border-light);
+    background: var(--bg-card);
+    border: 2px solid var(--border-light);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-muted);
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--shadow-card);
 }
 
 .profile-placeholder svg {
@@ -48,8 +46,8 @@
     border-radius: 50%;
     object-fit: cover;
     object-position: 12% center;
-    border: 3px solid var(--border-light);
-    box-shadow: var(--shadow-glow);
+    border: 2px solid var(--border-light);
+    box-shadow: var(--shadow-card);
 }
 
 .hero-text {
@@ -57,27 +55,27 @@
 }
 
 .hero-greeting {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--accent-primary);
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 8px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .hero-name {
     font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: -1px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
     margin-bottom: 12px;
-    background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
 }
 
 .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--text-secondary);
     margin-bottom: 24px;
+    font-weight: 400;
 }
 
 .hero-details {
@@ -104,18 +102,13 @@
     align-items: center;
     gap: 8px;
     padding: 14px 32px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    background: var(--accent-primary);
     color: white;
     font-weight: 600;
-    border-radius: 12px;
-    transition: all var(--transition-normal);
-    box-shadow: 0 4px 15px rgba(74, 108, 247, 0.4);
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
 }
 
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(74, 108, 247, 0.5);
-}
 
 /* ===== CV Download Buttons ===== */
 .cv-download-buttons {
@@ -282,10 +275,8 @@
 }
 
 .skill-item:hover {
-    transform: translateY(-8px) scale(1.1);
-    border-color: var(--accent-primary);
-    box-shadow: var(--shadow-glow);
-    background: var(--bg-card-hover);
+    border-color: var(--border-light);
+    background: var(--bg-card);
 }
 
 .skill-item img,

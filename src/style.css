@@ -1,89 +1,89 @@
 /* ===== CSS Variables ===== */
 :root {
-    /* Dark Theme Colors */
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #12121a;
-    --bg-card: #1a1a25;
-    --bg-card-hover: #222230;
+    /* Refined Studio Dark Charcoal Theme */
+    --bg-primary: #121318;
+    --bg-secondary: #181920;
+    --bg-card: #1d1e26;
+    --bg-card-hover: #232530;
 
-    /* Accent Colors */
-    --accent-primary: #4a6cf7;
-    --accent-secondary: #6366f1;
-    --accent-primary-rgb: 74, 108, 247;
-    --accent-secondary-rgb: 99, 102, 241;
-    --accent-glow: rgba(var(--accent-primary-rgb), 0.3);
+    /* Elegant Primary Accent (Indigo / Slate accent) */
+    --accent-primary: #6366f1;
+    --accent-secondary: #818cf8;
+    --accent-primary-rgb: 99, 102, 241;
+    --accent-secondary-rgb: 129, 140, 248;
+    --accent-glow: rgba(var(--accent-primary-rgb), 0.15);
 
     /* Text Colors */
-    --text-primary: #ffffff;
-    --text-secondary: #a1a1aa;
-    --text-muted: #71717a;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
 
-    /* Borders */
-    --border-color: rgba(255, 255, 255, 0.08);
+    /* Fine Borders */
+    --border-color: rgba(255, 255, 255, 0.07);
     --border-light: rgba(255, 255, 255, 0.12);
 
     /* Spacing */
     --nav-height: 70px;
-    --section-padding: 100px;
+    --section-padding: 80px;
 
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    --transition-slow: 0.4s ease;
 
-    /* Shadows */
-    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
-    --shadow-glow: 0 0 30px var(--accent-glow);
+    /* Subtle Natural Shadows */
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.25);
+    --shadow-glow: 0 0 24px rgba(99, 102, 241, 0.12);
 }
 
-/* ===== Accent Page Themes ===== */
+/* ===== Accent Page Themes (Subtle, refined tints) ===== */
 body.route-home {
-    --accent-primary: #4a6cf7;
-    --accent-secondary: #6366f1;
-    --accent-primary-rgb: 74, 108, 247;
-    --accent-secondary-rgb: 99, 102, 241;
+    --accent-primary: #6366f1;
+    --accent-secondary: #818cf8;
+    --accent-primary-rgb: 99, 102, 241;
+    --accent-secondary-rgb: 129, 140, 248;
 }
 
 body.route-education {
     --accent-primary: #10b981;
-    --accent-secondary: #059669;
+    --accent-secondary: #34d399;
     --accent-primary-rgb: 16, 185, 129;
-    --accent-secondary-rgb: 5, 150, 105;
+    --accent-secondary-rgb: 52, 211, 153;
 }
 
 body.route-professional {
     --accent-primary: #8b5cf6;
-    --accent-secondary: #7c3aed;
+    --accent-secondary: #a78bfa;
     --accent-primary-rgb: 139, 92, 246;
-    --accent-secondary-rgb: 124, 58, 237;
+    --accent-secondary-rgb: 167, 139, 250;
 }
 
 body.route-projects {
-    --accent-primary: #06b6d4;
-    --accent-secondary: #0891b2;
-    --accent-primary-rgb: 6, 182, 212;
-    --accent-secondary-rgb: 8, 145, 178;
+    --accent-primary: #0284c7;
+    --accent-secondary: #38bdf8;
+    --accent-primary-rgb: 2, 132, 199;
+    --accent-secondary-rgb: 56, 189, 248;
 }
 
 body.route-activities {
-    --accent-primary: #f59e0b;
-    --accent-secondary: #d97706;
-    --accent-primary-rgb: 245, 158, 11;
-    --accent-secondary-rgb: 217, 119, 6;
+    --accent-primary: #d97706;
+    --accent-secondary: #fbbf24;
+    --accent-primary-rgb: 217, 119, 6;
+    --accent-secondary-rgb: 251, 191, 36;
 }
 
 body.route-mobility {
     --accent-primary: #ec4899;
-    --accent-secondary: #db2777;
+    --accent-secondary: #f472b6;
     --accent-primary-rgb: 236, 72, 153;
-    --accent-secondary-rgb: 219, 39, 119;
+    --accent-secondary-rgb: 244, 114, 182;
 }
 
 body.route-contact {
     --accent-primary: #3b82f6;
-    --accent-secondary: #2563eb;
+    --accent-secondary: #60a5fa;
     --accent-primary-rgb: 59, 130, 246;
-    --accent-secondary-rgb: 37, 99, 235;
+    --accent-secondary-rgb: 96, 165, 250;
 }
 
 /* ===== Reset & Base ===== */
@@ -105,17 +105,23 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.02em;
 }
 
 /* ===== Page Transitions ===== */
 .page-transition {
-    animation: fadeSlideIn 0.6s ease-out forwards;
+    animation: fadeSlideIn 0.5s ease-out forwards;
 }
 
 @keyframes fadeSlideIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(12px);
     }
 
     to {
@@ -125,7 +131,7 @@ body {
 }
 
 main {
-    animation: fadeSlideIn 0.5s ease-out;
+    animation: fadeSlideIn 0.4s ease-out;
 }
 
 a {
@@ -149,31 +155,18 @@ img {
     padding: 0 24px;
 }
 
-
-
 /* ===== Sections ===== */
 .section {
     padding: var(--section-padding) 0;
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 60px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -16px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-    border-radius: 2px;
+    margin-bottom: 48px;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
 }
 
 /* ===== Contact Form ===== */

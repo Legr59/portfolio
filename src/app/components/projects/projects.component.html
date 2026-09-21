@@ -1,17 +1,23 @@
-<app-page-header 
-    title="Projects" 
-    subtitle="Technical projects and professional experiences in electronics engineering">
-</app-page-header>
+<app-page-header
+  title="Projects"
+  subtitle="Technical projects and professional experiences in electronics engineering"
+/>
 
 <!-- Projects List -->
 <section class="section">
-    <div class="container">
-        <div class="projects-list">
-            @for (project of academicProjects; track project.title) {
-                <app-project-item [project]="project"></app-project-item>
-            }
-        </div>
+  <div class="container">
+    <div class="projects-grid">
+      @for (project of academicProjects; track project.title) {
+        <app-project-item [project]="project" />
+      }
     </div>
+  </div>
 </section>
 
-<app-key-learnings></app-key-learnings>
+<!-- Key Learnings -->
+<section class="section" style="background: var(--bg-secondary);">
+  <div class="container">
+    <h2 class="section-title">Key Learnings</h2>
+    <app-key-learnings />
+  </div>
+</section>

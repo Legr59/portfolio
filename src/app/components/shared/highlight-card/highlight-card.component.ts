@@ -12,7 +12,8 @@ export class HighlightCard {
   readonly title = input.required<string>();
   readonly desc = input.required<string>();
 
-  readonly icon = input<string>(''); // SVG path data (optional)
-  readonly listTitle = input<string>(''); // Title for nested list (optional)
-  readonly bulletPoints = input<string[]>([]); // Nested list points (optional)
+  readonly icon = input<string>('');
+  readonly listTitle = input<string>('');
+  readonly bulletPoints = input<string[]>([]);
+  readonly hoverEffect = input<'lift' | 'none'>('none');
 }

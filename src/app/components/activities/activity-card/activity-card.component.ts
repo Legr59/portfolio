@@ -15,7 +15,8 @@ export class ActivityCard {
   readonly details = input.required<string[]>();
   readonly tags = input.required<string[]>();
 
-  readonly logo = input<string>(''); // Image logo (optional)
-  readonly icon = input<string>(''); // SVG icon path (optional)
-  readonly iconColor = input<string>('currentColor'); // SVG icon fill color (optional)
+  readonly logo = input<string>('');
+  readonly icon = input<string>('');
+  readonly iconColor = input<string>('currentColor');
+  readonly hoverEffect = input<'lift' | 'none'>('none');
 }

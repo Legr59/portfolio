@@ -15,7 +15,6 @@
     border-radius: 12px;
     color: var(--accent-primary);
     border: 1px solid rgba(var(--accent-primary-rgb), 0.15);
-    transition: all var(--transition-normal);
 }
 
 .highlight-icon svg {
@@ -23,12 +22,7 @@
     height: 24px;
 }
 
-:host:hover .highlight-icon {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    color: white;
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 4px 15px rgba(var(--accent-primary-rgb), 0.4);
-}
+
 
 h3 {
     font-size: 1.2rem;

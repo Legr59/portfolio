@@ -1,27 +1,29 @@
-<app-card-wrapper hoverEffect="lift" borderStyle="top-accent">
+<app-card-wrapper hoverEffect="none" borderStyle="left-accent">
+  <div class="project-card">
     <div class="project-header">
-        <span class="project-meta">{{ project().meta }}</span>
-        <span class="project-type">{{ project().type }}</span>
+      <span class="project-meta">{{ project().meta }}</span>
+      <span class="project-type">{{ project().type }}</span>
     </div>
     <h3 class="project-title">{{ project().title }}</h3>
     <p class="project-description">{{ project().description }}</p>
 
     <div class="project-columns">
-        @for (column of project().columns; track column.title) {
+      @for (column of project().columns; track column.title) {
         <div class="project-column">
-            <h4>{{ column.title }}</h4>
-            <ul>
-                @for (task of column.tasks; track task) {
-                    <li>{{ task }}</li>
-                }
-            </ul>
+          <h4>{{ column.title }}</h4>
+          <ul>
+            @for (task of column.tasks; track task) {
+              <li>{{ task }}</li>
+            }
+          </ul>
         </div>
-        }
+      }
     </div>
 
     <div class="content-tags">
-        @for (tag of project().tags; track tag) {
-            <span class="tag">{{ tag }}</span>
-        }
+      @for (tag of project().tags; track tag) {
+        <span class="tag">{{ tag }}</span>
+      }
     </div>
+  </div>
 </app-card-wrapper>

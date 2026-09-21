@@ -1,21 +1,178 @@
+/* ===== Timeline Layout ===== */
 .timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
+/* Vertical line running along the left */
 .timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: var(--border-light);
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent-primary),
+    rgba(var(--accent-primary-rgb), 0.1)
+  );
 }
 
-@media (max-width: 992px) {
-    .timeline::before {
-        left: 20px;
-    }
+.timeline-entry {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding-bottom: 32px;
+  cursor: default;
+}
+
+.timeline-entry.expandable {
+  cursor: pointer;
+}
+
+/* Dot on the axis */
+.timeline-axis {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  width: 34px;
+  padding-top: 22px;
+  z-index: 1;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  background: var(--bg-primary);
+}
+
+.timeline-dot.current {
+  background: var(--accent-primary);
+}
+
+.timeline-dot.upcoming {
+  border-style: dashed;
+  opacity: 0.6;
+}
+
+.timeline-dot.completed {
+  background: var(--accent-primary);
+}
+
+
+/* Card inner layout */
+.timeline-card {
+  flex: 1;
+}
+
+.timeline-card-inner {
+  padding: 24px 28px;
+}
+
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Status badges */
+.badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge.current {
+  background: rgba(var(--accent-primary-rgb), 0.15);
+  color: var(--accent-primary);
+}
+
+.badge.completed {
+  background: rgba(var(--accent-secondary-rgb), 0.15);
+  color: var(--accent-secondary);
+}
+
+.badge.upcoming {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+}
+
+.timeline-card-inner h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.timeline-summary {
+  color: var(--text-secondary);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Expandable details */
+.timeline-details {
+  display: none;
+  margin-top: 16px;
+}
+
+.timeline-entry.expanded .timeline-details {
+  display: block;
+}
+
+.timeline-details ul {
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timeline-details li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Expand hint */
+.expand-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.timeline-entry:hover .expand-hint {
+  opacity: 1;
+}
+
+.expand-hint svg {
+  transition: transform 0.2s ease;
+}
+
+.timeline-entry.expanded .expand-hint svg {
+  transform: rotate(180deg);
 }

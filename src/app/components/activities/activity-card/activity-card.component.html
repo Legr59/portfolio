@@ -1,4 +1,4 @@
-<app-card-wrapper hoverEffect="lift" borderStyle="full" [glowColor]="(iconColor() && iconColor() !== 'currentColor') ? iconColor() : 'var(--accent-primary)'">
+<app-card-wrapper [hoverEffect]="hoverEffect()" borderStyle="full" [glowColor]="(iconColor() && iconColor() !== 'currentColor') ? iconColor() : 'var(--accent-primary)'">
     <div class="activity-logo">
         @if (logo()) {
             <img [src]="logo()" [alt]="title()">

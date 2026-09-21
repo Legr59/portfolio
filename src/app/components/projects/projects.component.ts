@@ -8,7 +8,7 @@ import { ACADEMIC_PROJECTS } from './projects.data';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, ProjectItem, PageHeader, KeyLearnings],
+  imports: [CommonModule, PageHeader, ProjectItem, KeyLearnings],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })

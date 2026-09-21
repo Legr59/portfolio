@@ -1,17 +1,49 @@
-<app-page-header 
-    title="Education" 
-    subtitle="My academic journey and specializations in Electronics Engineering">
-</app-page-header>
+<app-page-header
+  title="Education"
+  subtitle="My academic journey and specializations in Electronics Engineering"
+/>
 
 <!-- Academic Timeline Section -->
 <section class="section">
-    <div class="container">
-        <h2 class="section-title">Academic Timeline</h2>
+  <div class="container">
+    <h2 class="section-title">Academic Timeline</h2>
+    <div class="timeline">
+      @for (item of academicTimeline; track item.title) {
+        <div class="timeline-entry" [class.expandable]="item.details.length > 0" [class.expanded]="item.expanded" (click)="toggleExpand(item)">
+          <!-- Connector line + dot -->
+          <div class="timeline-axis">
+            <div class="timeline-dot" [ngClass]="item.status"></div>
+          </div>
 
-        <div class="timeline">
-            @for (item of academicTimeline; track item.title) {
-                <app-timeline-item [item]="item"></app-timeline-item>
-            }
+          <!-- Card -->
+          <app-card-wrapper hoverEffect="lift" borderStyle="left-accent" class="timeline-card">
+            <div class="timeline-card-inner">
+              <div class="timeline-meta">
+                <span class="timeline-date">{{ item.date }}</span>
+                <span class="badge" [ngClass]="item.status">{{ item.statusLabel }}</span>
+              </div>
+              <h3>{{ item.title }}</h3>
+              <p class="timeline-summary">{{ item.summary }}</p>
+
+              @if (item.details.length > 0) {
+                <div class="timeline-details">
+                  <ul>
+                    @for (detail of item.details; track detail) {
+                      <li>{{ detail }}</li>
+                    }
+                  </ul>
+                </div>
+                <span class="expand-hint">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                    <path d="M7 10l5 5 5-5z"/>
+                  </svg>
+                  {{ item.expanded ? 'Show less' : 'Show details' }}
+                </span>
+              }
+            </div>
+          </app-card-wrapper>
         </div>
+      }
     </div>
+  </div>
 </section>

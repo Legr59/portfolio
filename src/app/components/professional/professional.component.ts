@@ -1,28 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeader } from '../shared/page-header/page-header.component';
+import { CardWrapper } from '../shared/card-wrapper/card-wrapper.component';
 import { HighlightCard } from '../shared/highlight-card/highlight-card.component';
-import { GoalCard } from './goal-card/goal-card.component';
-import { ExperienceCard } from './experience-card/experience-card.component';
 
 @Component({
   selector: 'app-professional',
   standalone: true,
-  imports: [CommonModule, PageHeader, HighlightCard, GoalCard, ExperienceCard],
+  imports: [CommonModule, PageHeader, CardWrapper, HighlightCard],
   templateUrl: './professional.component.html',
-  styleUrl: './professional.component.css',
+  styleUrl: './professional.component.css'
 })
 export class Professional {
   careerGoals = [
     {
-      date: 'Short-term (Gap Year 2025-2026)',
+      date: 'Short-term (Gap Year 2026-2027)',
       title: 'Building International Experience',
       summary: 'Gap year focused on gaining professional experience abroad and in France',
       expanded: false,
       details: [
-        { label: '🌍 Internship Abroad', text: 'Gain hands-on experience in countries renowned for their expertise in electronics (Germany, Italy, Japan). Target companies: TESAT-Spacecom, Thales Alenia Space, Magneti Marelli.' },
-        { label: '🇫🇷 Internship in France', text: 'Secure a position in the automotive, aeronautics, or aerospace industry with leading companies such as Airbus, Safran, or Thales.' },
-        { label: '🎓 Return to ENSEEIHT', text: 'Continue my InSys (Systems Integration) track with specialized options: Power Management and Analog Deepening.' }
+        { label: 'Internship Abroad', text: 'Gain hands-on experience in countries renowned for their expertise in electronics (Germany, Italy, Japan). Target companies: TESAT-Spacecom, Thales Alenia Space, Magneti Marelli.' },
+        { label: 'Internship in France', text: 'Intenship in France at Nice Observatory : Acquire skills and experience in digital electronics' },
+        { label: 'Return to ENSEEIHT', text: 'Continue my InSys (Systems Integration) track with specialized options: Power Management and Analog Deepening.' }
       ]
     },
     {
@@ -31,8 +30,8 @@ export class Professional {
       summary: 'Join the aerospace industry as an Electronics Design Engineer',
       expanded: false,
       details: [
-        { label: '🚀 Aerospace Entry', text: 'Enter a leading aerospace company working on cutting-edge embedded systems and architecture for satellites or aircraft.' },
-        { label: '🎯 Target sectors', text: 'Satellite communication, Avionics, Power electronics, and Embedded systems for aerospace.' }
+        { label: 'Aerospace Entry', text: 'Enter a leading aerospace company working on cutting-edge embedded systems and architecture for satellites or aircraft.' },
+        { label: 'Target sectors', text: 'Satellite communication, Avionics, Power electronics, and Embedded systems for aerospace.' }
       ]
     },
     {
@@ -41,8 +40,8 @@ export class Professional {
       summary: 'Evolve toward technical leadership and international opportunities',
       expanded: false,
       details: [
-        { label: '👔 Leadership Role', text: 'Transition to a leadership role, leveraging both technical expertise and cross-cultural experience.' },
-        { label: '📈 Aspirations', text: 'Lead engineering teams, potentially relocate abroad, and take on project lead responsibilities.' }
+        { label: 'Leadership Role', text: 'Transition to a leadership role, leveraging both technical expertise and cross-cultural experience.' },
+        { label: 'Aspirations', text: 'Lead engineering teams, potentially relocate abroad, and take on project lead responsibilities.' }
       ]
     }
   ];
@@ -51,7 +50,7 @@ export class Professional {
     {
       role: 'Embedded Systems & Test Bench Intern',
       company: 'SERMA Ingénierie — Aix-en-Provence (13)',
-      date: 'June - August 2026',
+      date: 'June - September 2026',
       description: 'Development of critical validation tools for the aerospace and defense industry within a multidisciplinary engineering team. Designed and implemented a test bench for validating demanding embedded electronic systems, covering the full development cycle from specification to integration.',
       skills: [
         'Test bench architecture design & specification',
@@ -79,7 +78,7 @@ export class Professional {
       company: 'Agricultural Farm — Belgium',
       date: 'June - July 2022',
       description: 'Summer job working on a farm, assisting with daily agricultural operations.',
-      skills: ['Strong work ethic (early starts)', 'Adaptability (outdoor conditions)', 'Autonomy and initiative']
+      skills: ['Strong work ethic (early starts)', 'Adaptability', 'Autonomy and initiative']
     },
     {
       role: 'Handball Referee',
@@ -107,4 +106,8 @@ export class Professional {
       desc: 'Microcontrollers, real-time systems, IoT'
     }
   ];
+
+  toggleGoal(goal: any) {
+    goal.expanded = !goal.expanded;
+  }
 }

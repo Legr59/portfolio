@@ -14,6 +14,33 @@ export interface Project {
 
 export const ACADEMIC_PROJECTS: Project[] = [
   {
+    meta: 'Observatoire de la Côte d\'Azur • Oct 2026 - Mar 2027',
+    type: 'Engineering Internship — Space & Nanosatellites',
+    title: 'Nice CubeSat FPGA Communication Architecture & IP Validation',
+    description: 'Implementation and validation of communication protocols within the Zynq-7000 SoC FPGA (Zybo-Z7-10) for the Nice Cube nanosatellite project in partnership with CNES Nanolab Academy. Responsible for validating FlatSat communication chains, developing test benches, and performing bare-metal testing within a multidisciplinary aerospace team.',
+    columns: [
+      {
+        title: 'FPGA Architecture & IP Integration',
+        tasks: [
+          'Implementation and integration of CNES Nanolab Academy communication IPs into the Nice Cube FPGA architecture.',
+          'Hardware logic design and UART protocol validation on Xilinx Zynq-7000 SoC FPGA (Zybo-Z7-10).',
+          'Validation of the FlatSat communication chain between the SCC module and Arduino MKR Zero board.',
+          'Collaboration with CNES FPGA engineers for IP definition and integration.'
+        ]
+      },
+      {
+        title: 'Embedded Validation & Multidisciplinary Work',
+        tasks: [
+          'Construction of dedicated test benches to validate inter-subsystem communications (including the OBC).',
+          'Bare-metal embedded firmware testing using C, Xilinx Vitis, and Vivado tools.',
+          'IP performance analysis, technical reporting, and specification document drafting.',
+          'Active participation in concurrent engineering sessions across system, ADCS, payload, and ground station teams.'
+        ]
+      }
+    ],
+    tags: ['Zynq-7000 SoC FPGA', 'CNES Nanolab Academy', 'Vitis / Vivado', 'Bare-metal C', 'UART / Protocols', 'FlatSat / CubeSat']
+  },
+  {
     meta: 'SERMA Ingénierie • Summer 2026',
     type: 'Industry Internship — Aerospace',
     title: 'Embedded Test Bench for Avionics Validation',
