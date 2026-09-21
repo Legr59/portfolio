@@ -1,0 +1,194 @@
+%-------------------------
+% CV - Martin LEGRAND (EN)
+% LaTeX Template — Clean & Professional
+%-------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+% ── Packages ──────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{lato}
+\usepackage{parskip}
+\usepackage{tabularx}
+\usepackage{multicol}
+
+% ── Colors ────────────────────────────────────────────
+\definecolor{accent}{HTML}{2B4C7E}
+\definecolor{lightgray}{HTML}{6B7280}
+\definecolor{rulecol}{HTML}{D1D5DB}
+
+% ── Hyperlink setup ───────────────────────────────────
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accent,
+    urlcolor=accent,
+    pdfauthor={Martin LEGRAND},
+    pdftitle={CV - Martin LEGRAND},
+}
+
+% ── Section formatting ────────────────────────────────
+\titleformat{\section}
+  {\large\bfseries\color{accent}\uppercase}
+  {}
+  {0em}
+  {}
+  [\vspace{-0.6em}\textcolor{rulecol}{\rule{\linewidth}{0.4pt}}]
+
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+% ── Custom commands ───────────────────────────────────
+\newcommand{\cventry}[4]{%
+  \noindent
+  \textbf{#1} \hfill {\small\color{lightgray}#2} \\
+  {\itshape\color{accent}#3}%
+  \ifx&#4&\else\\#4\fi
+  \vspace{6pt}
+}
+
+\newcommand{\cventrysimple}[3]{%
+  \noindent
+  \textbf{#1} \hfill {\small\color{lightgray}#2} \\
+  #3
+  \vspace{6pt}
+}
+
+% ── No page numbers ───────────────────────────────────
+\pagestyle{empty}
+
+% ══════════════════════════════════════════════════════
+\begin{document}
+
+% ── HEADER ────────────────────────────────────────────
+\begin{center}
+  {\Huge\bfseries Martin LEGRAND}\\[6pt]
+  {\large\color{accent} Looking for a 6-Month Internship}\\[10pt]
+  {\small
+    \faPhone\ +33\,6\,79\,94\,09\,04 \quad
+    \faEnvelope\ \href{mailto:legranmar@gmail.com}{legranmar@gmail.com} \quad
+    \faMapMarker*\ France \quad
+    \faGlobe\ \href{https://legr59.github.io/portfolio}{legr59.github.io/portfolio} \quad
+    \faCar\ Driver's License (B)
+  }
+\end{center}
+
+\vspace{4pt}
+
+% ── ABOUT ME ──────────────────────────────────────────
+\section{About Me}
+
+Future graduate engineer from ENSEEIHT in the 3EA program, I am specializing my career path in embedded systems and signal processing. Passionate about technological innovation, I am seeking a 6-month internship to apply my skills in digital, analog, and RF electronics to challenging technical projects.
+
+% ── EDUCATION ─────────────────────────────────────────
+\section{Education}
+
+\cventry{ENSEEIHT — Toulouse}{2024 -- Present}
+  {Engineering Degree in Electronics \& Electrical Engineering}
+  {3EA Department — Systems Integration (InSys) Track}
+
+\cventry{Classe Préparatoire MPSI / MP* — Henri Wallon, Valenciennes}{2022 -- 2024}
+  {Preparatory Classes for Grandes Écoles}
+  {Intensive two-year program in Mathematics, Physics \& Engineering Sciences}
+
+\cventry{Institution La Croix Blanche (59)}{2015 -- 2022}
+  {French Baccalauréat — Mathematics \& Physics-Chemistry}
+  {Option: Expert Mathematics}
+
+% ── EXPERIENCE ────────────────────────────────────────
+\section{Experience}
+
+\cventry{FM Optoelectronic Audio Transmission System}{Autumn 2025}
+  {Academic Project — ENSEEIHT}
+  {\begin{itemize}[nosep, leftmargin=1.2em, itemsep=1pt]
+    \item Design and implementation of a transistor-based FM modulator
+    \item Receiver chain: amplification and demodulation
+    \item Experimental validation of the full transmission link
+  \end{itemize}}
+
+\cventry{RFID Access Control System (PIC18F Microcontroller)}{Autumn 2025}
+  {Academic Project — ENSEEIHT}
+  {\begin{itemize}[nosep, leftmargin=1.2em, itemsep=1pt]
+    \item UART interface with CR95HF reader and NFC tag detection
+    \item Servo motor control and low-level C programming
+  \end{itemize}}
+
+\cventry{FPGA Digital Front-End \& Frequency Meter}{Autumn 2025}
+  {Academic Project — ENSEEIHT}
+  {\begin{itemize}[nosep, leftmargin=1.2em, itemsep=1pt]
+    \item VHDL design on Artix-7 FPGA: fixed-point high-pass filtering and edge detection
+    \item High-resolution frequency counter with 4-digit 7-segment display
+    \item XADC (12-bit, 1\,MHz) and external DAC interfacing for real-time monitoring
+  \end{itemize}}
+
+\cventry{Connected Cardiac Monitor}{Mar -- May 2025}
+  {Academic Project — ENSEEIHT}
+  {\begin{itemize}[nosep, leftmargin=1.2em, itemsep=1pt]
+    \item Analog acquisition chain design
+    \item System architecture and data transmission
+    \item Digital signal processing
+  \end{itemize}}
+
+\cventry{Versatile Employee — Carter-Cash (59)}{Aug 2025}
+  {Summer Job}
+  {Delivery reception and customer relations management}
+
+% ── Two-column bottom section ─────────────────────────
+\vspace{-2pt}
+\begin{minipage}[t]{0.48\linewidth}
+
+% ── TECHNICAL SKILLS ──────────────────────────────────
+\section{Technical Skills}
+
+\textbf{Programming}\\
+C/C++ \enspace$\cdot$\enspace VHDL \enspace$\cdot$\enspace Python \enspace$\cdot$\enspace MATLAB
+
+\vspace{6pt}
+\textbf{EDA \& Simulation Tools}\\
+OrCAD PSpice \enspace$\cdot$\enspace Vivado \enspace$\cdot$\enspace ADS \enspace$\cdot$\enspace HFSS \enspace$\cdot$\enspace MPLAB
+
+\vspace{6pt}
+\textbf{Other}\\
+\LaTeX
+
+% ── SOFT SKILLS ───────────────────────────────────────
+\section{Soft Skills}
+
+\begin{itemize}[nosep, leftmargin=1.2em, itemsep=2pt]
+  \item Working under pressure
+  \item Efficiency and time management
+  \item Organization and planning
+\end{itemize}
+
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+
+% ── LANGUAGES ─────────────────────────────────────────
+\section{Languages}
+
+\begin{tabularx}{\linewidth}{Xr}
+  French  & Native \\
+  English & B1 \\
+  Japanese & Beginner \\
+\end{tabularx}
+
+% ── INTERESTS ─────────────────────────────────────────
+\section{Interests}
+
+\textbf{Sports}\\
+Running \enspace$\cdot$\enspace Tennis (7 years in club) \enspace$\cdot$\enspace Handball (7 years + University)
+
+\vspace{6pt}
+\textbf{Hobbies}\\
+Motorsports \enspace$\cdot$\enspace Chess (N7etMat club, 4 years online)
+
+\end{minipage}
+
+\end{document}
