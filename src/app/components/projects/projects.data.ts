@@ -71,7 +71,7 @@ export const ACADEMIC_PROJECTS: Project[] = [
     meta: 'ENSEEIHT • Spring 2026',
     type: 'Microelectronics & Analog Design Project',
     title: 'Cleanroom Microfabrication & Analog Amplifier Design',
-    description: 'End-to-end microelectronics project spanning from transistor-level design to cleanroom fabrication. Designed PMOS transistors using EDA tools on Linux, simulated operational amplifier circuits on OrCAD PSpice, performed layout using the EKV MOS model, and fabricated MOS transistors and amplifier circuits on silicon wafers in a university cleanroom environment.',
+    description: 'End-to-end microelectronics project spanning from transistor-level design to cleanroom fabrication. Designed PMOS transistors, simulated operational amplifier circuits on OrCAD PSpice, performed layout using the EKV MOS model, and fabricated MOS transistors and amplifier circuits on silicon wafers in a university cleanroom environment.',
     columns: [
       {
         title: 'Transistor Design & Simulation',

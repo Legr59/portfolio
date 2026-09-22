@@ -13,7 +13,7 @@ import { JourneyCard } from './journey-card/journey-card.component';
 export class Home {
   cvButtons = [
     { label: 'CV Français', link: 'Source/CV_Martin_LEGRAND_FR.pdf', class: 'cv-button-fr' },
-    { label: 'CV English', link: 'Source/CV_EN.pdf', class: 'cv-button-en' }
+    { label: 'Resume EN', link: 'Source/CV_EN.pdf', class: 'cv-button-en' }
   ];
 
   softwareSkills = [
