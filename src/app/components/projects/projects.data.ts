@@ -76,7 +76,7 @@ export const ACADEMIC_PROJECTS: Project[] = [
       {
         title: 'Transistor Design & Simulation',
         tasks: [
-          'PMOS Transistor Design: Sizing and characterization of PMOS devices using EDA tools on Linux workstations.',
+          'PMOS Transistor Design: Sizing and characterization of PMOS devices.',
           'Op-Amp Simulation: Full analog simulation of operational amplifier circuits using OrCAD PSpice, including DC operating point, AC frequency response, and transient analysis.',
           'EKV Model Layout: Physical layout design of MOS transistors based on the EKV compact model, ensuring DRC/LVS compliance.',
           'Amplifier PCB Design: Schematic capture and PCB board design for discrete amplifier testing and validation.'
