@@ -68,6 +68,33 @@ export const ACADEMIC_PROJECTS: Project[] = [
     tags: ['Embedded C', 'Raspberry Pi', 'CAN FD', 'Angular / TypeScript', 'Aerospace', 'Test Bench']
   },
   {
+    meta: 'ENSEEIHT • Spring 2026',
+    type: 'Microelectronics & Analog Design Project',
+    title: 'Cleanroom Microfabrication & Analog Amplifier Design',
+    description: 'End-to-end microelectronics project spanning from transistor-level design to cleanroom fabrication. Designed PMOS transistors using EDA tools on Linux, simulated operational amplifier circuits on OrCAD PSpice, performed layout using the EKV MOS model, and fabricated MOS transistors and amplifier circuits on silicon wafers in a university cleanroom environment.',
+    columns: [
+      {
+        title: 'Transistor Design & Simulation',
+        tasks: [
+          'PMOS Transistor Design: Sizing and characterization of PMOS devices using EDA tools on Linux workstations.',
+          'Op-Amp Simulation: Full analog simulation of operational amplifier circuits using OrCAD PSpice, including DC operating point, AC frequency response, and transient analysis.',
+          'EKV Model Layout: Physical layout design of MOS transistors based on the EKV compact model, ensuring DRC/LVS compliance.',
+          'Amplifier PCB Design: Schematic capture and PCB board design for discrete amplifier testing and validation.'
+        ]
+      },
+      {
+        title: 'Cleanroom Fabrication & Testing',
+        tasks: [
+          'Wafer Processing: Hands-on microfabrication of MOS transistors on silicon wafers in a controlled cleanroom environment (photolithography, etching, oxidation, doping).',
+          'Process Flow: Execution of the full CMOS fabrication process sequence from substrate preparation to metallization.',
+          'Device Characterization: Electrical testing and parameter extraction of fabricated transistors (threshold voltage, transconductance, I-V curves).',
+          'Amplifier Assembly & Test: Assembly and functional testing of amplifier PCBs using the fabricated transistor devices.'
+        ]
+      }
+    ],
+    tags: ['Cleanroom Fabrication', 'PMOS Design', 'OrCAD PSpice', 'EKV Model', 'PCB Design', 'Silicon Wafer Processing']
+  },
+  {
     meta: 'ENSEEIHT • 2025-2026',
     type: 'Digital Systems Project',
     title: 'FPGA 1-Wire Digital Thermometer',
